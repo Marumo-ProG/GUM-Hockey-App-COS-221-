@@ -1,0 +1,36 @@
+/* // $navbar-light-color:                rgba($black, .55);
+// $navbar-light-hover-color:          rgba($black, .7);
+// $navbar-light-active-color:         rgba($black, .9);
+// $navbar-light-disabled-color:       rgba($black, .3);
+// // $navbar-light-toggler-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-light-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+// $navbar-light-toggler-border-color: rgba($black, .1); */
+
+.nav-item:hover{
+    color: #7F8487;
+}
+
+.container-fluid {
+    color: #413F42;
+}
+
+.trn{
+    background: transparent !important;
+    z-index : 99;
+}
+
+.mynav{
+     background: #413F42 !important;
+}
+
+.bd-example{
+    margin-top: -100px;
+}
+
+.carousel-item{
+    
+height: 700px;
+}
+
+h1{
+    text-align: center;
+}
