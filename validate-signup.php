@@ -10,7 +10,7 @@ $firstName = $_POST["first_name"];
 $lastName = $_POST["last_name"]; 
 $email = $_POST["email"];
 $password = $_POST["password"];
-$user = $_POST["userType"];
+$user = $_POST["is_admin"];
 
 // hashing the password before storing it in the database;
 $password = password_hash($password, PASSWORD_DEFAULT);
@@ -19,5 +19,7 @@ $password = password_hash($password, PASSWORD_DEFAULT);
 
 // adding user using the connected database;
 $db->signUser($firstName, $lastName, $email, $password, $user);
+
+// reload the page with a confirmation message
 
 ?>

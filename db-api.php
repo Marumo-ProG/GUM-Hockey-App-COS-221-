@@ -30,8 +30,13 @@
   
           $query = "SELECT * FROM users";
           $result = $this->conn->query($query);
-  
-          return $result;
+
+          $users = array();   // to hold the array of users;
+          while($row = $result->fetch_assoc()){
+            array_push($users, $row);
+          }
+
+          return json_encode($users, true);
       }
       public function signUser($first_name, $last_name, $email, $password, $userType)
       {
@@ -81,6 +86,46 @@
       }
 
       // this funtion will be used to update users information 
+
+      // this function will be used to get all the teams information in the databse
+      public function getTeams(){
+        $query = "SELECT * FROM teams";
+        $result = $this->con->query($query);
+        if($result->num_rows > 0){
+          // send a json object with the data
+          $teams = array("count" => $result->num_rows, "teams" => []);   // to hold the array of users;
+          while($row = $result->fetch_assoc()){
+            array_push($teams["teams"], $row);
+          }
+
+          return json_encode($teams, true);
+        }
+      }
+
+      // this function will be used to register teams
+      public function registerTeam($name, $coach_id, $captain, $origin){
+        $query = "INSERT INTO teams VALUES ('$name', '$coach_id', '$captain', '$origin')";
+
+        if($this->conn->query($query) == true){
+          echo '<script>console.log("Team added successfully");</script>';
+        }else{
+          echo $this->conn->error;
+        }
+      }
+
+      // this function will be used to add coach into the db
+      public function registerCoach($teamName, $gender, $position, $experience, $sDate, $eDate){
+   
+        $query = "INSERT INTO coaches (Gender,Position,Experience,Starting_Date,Ending_Date) VALUES ( '$gender', '$position', STR_TO_DATE('$experience','%Y-%m-%d'), STR_TO_DATE('$sDate','%Y-%m-%d'), STR_TO_DATE('$eDate','%Y-%m-%d'))";
+        if($this->conn->query($query)== true){
+          echo "<script>console.log('Coach successfully added!')</script>";
+        }else {
+          echo $this->conn->error;
+        }
+      }
+
+      // this funtion will be used to register a player
+      
 
   }
 
