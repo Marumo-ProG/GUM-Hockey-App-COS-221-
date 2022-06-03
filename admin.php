@@ -37,7 +37,7 @@
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html"><img src="imgs/logo.jpeg" alt="" width="30" height="24"
             class="d-inline-block align-text-top">
-          GUM Login
+          GUM Field Hockey (<?php include "db-api.php"; if($db->autho)echo "logged in"; else echo"Not logged in"; ?>)
         </a></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,7 +45,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li><a href="overview.html"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a></li>
+            <li><a href="logout.php"><i class="fa fa-arrow-left" aria-hidden="true"></i> logout</a></li>
           </ul>
         </div>
       </div>
@@ -54,29 +54,7 @@
 
   <section id="login-form">
     <h3>Please fill in the information below to login</h3>
-    <hr>
-    <br>
-    <form action="validate-login.php" mthod="POST" class="">
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-          placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted">This is for Admins and Users who will add and regulate tournaments</small>
-      </div>
-      <br>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-      </div>
-      <br>
-      <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Remember me</label>
-      </div>
-      <br>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    <br>
+    
   </section>
 </body>
 

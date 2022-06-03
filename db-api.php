@@ -2,7 +2,7 @@
   class Database
   {
       // my class variables 
-  
+      public $autho = false;
       public static function instance()
       {
           static $instance = null;
@@ -15,8 +15,6 @@
           $this->conn = new mysqli("127.0.0.1:3306","root","20485001","field_hockey");
           if($this->conn == false){
               die("error connecting to the database");
-          }else{
-              echo "<script>console.log('connection to the database is a success')</script>";
           }
       }
       public function __destruct()

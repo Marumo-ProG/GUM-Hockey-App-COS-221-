@@ -56,16 +56,16 @@
         <h3>Please fill in the information below to signup</h3>
         <hr>
         <br>
-        <form id="signup-form" action="validate-signup.php" mthod="POST">
+        <form id="signup-form" action="validate-signup.php" method="POST">
             <div class="form-group">
                 <label for="exampleInputEmail1">First name</label>
-                <input type="email" name="first_name" class="form-control" id="exampleInputEmail1"
+                <input type="text" name="first_name" class="form-control" id="exampleInputEmail1"
                     aria-describedby="emailHelp" placeholder="Enter first name">
                
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Last name</label>
-                <input type="email" name="last_name" class="form-control" id="exampleInputEmail1"
+                <input type="text" name="last_name" class="form-control" id="exampleInputEmail1"
                     aria-describedby="emailHelp" placeholder="Enter last name">
                 
             </div>
@@ -82,7 +82,7 @@
             </div>
             <br>
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <input type="checkbox" name="is_admin" value="true" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Are you an admin?</label>
             </div>
             <br>

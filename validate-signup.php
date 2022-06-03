@@ -10,7 +10,16 @@ $firstName = $_POST["first_name"];
 $lastName = $_POST["last_name"]; 
 $email = $_POST["email"];
 $password = $_POST["password"];
-$user = $_POST["is_admin"];
+$user = false;
+if(isset($_POST["is_admin"])){
+    $user = $_POST["is_admin"];
+}
+
+if($user == true){
+    $user = "Yes";
+}else {
+    $user = "No";
+}
 
 // hashing the password before storing it in the database;
 $password = password_hash($password, PASSWORD_DEFAULT);
