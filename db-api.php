@@ -125,7 +125,15 @@
       }
 
       // this funtion will be used to register a player
-      
+      public function registerPlayer($player_id,$teamName, $first_name, $last_name, $position, $dob){
+        $query = "INSERT INTO players VALUES ('$player_id','$teamName','$first_name','$last_name','$position',STR_TO_DATE('$dob','%Y-%m-%d'))";
+        if($this->conn->query($query) == true){
+          echo '<script>console.log("Player added successfully")</script>';
+        }
+        else {
+          echo $this->conn->error;
+        }
+      }
 
   }
 
