@@ -133,6 +133,22 @@
         }
       }
 
+      public function getTournaments(){
+        $query = "SELECT * FROM tournement";
+        $result = $this->con->query($query);
+        if($result->num_rows > 0){
+          // send a json object with the data
+          $tournaments = array("count" => $result->num_rows, "teams" => []);   // to hold the array of users;
+          while($row = $result->fetch_assoc()){
+            array_push($tournaments["teams"], $row);
+          }
+
+          return json_encode($tournaments, true);
+        }
+      }
+
+      // adding a register tournament function
+
   }
 
   $db = Database::instance();
