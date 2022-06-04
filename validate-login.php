@@ -1,6 +1,8 @@
 <?php
+session_start();
 //includig the database singleton
 include "db-api.php";
+$_SESSION['email'];
 
 // making a database instance to insert a user in the database
 //$db = Database::instance();
@@ -11,7 +13,8 @@ $password = $_POST["password"];
 
 // we will retrieve the user from the database using the retrieve user function
 if($db->login($email, $password)){
-    $db->autho = true;
+    
+    $_SESSION['email'] = $email;
     // load the required page for admin and normal users
     $user = $db->retrieveUser($email);
     $user = $user->fetch_assoc();
