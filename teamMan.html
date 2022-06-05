@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="upHTML">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -63,10 +63,9 @@
 
     <!-- Custom styles for this template -->
     <link href="dashStyles.css" rel="stylesheet">
-    <link href="upStyles.css" rel="stylesheet">
-    <title>Upload</title>
+    <title>Document</title>
 </head>
-<body class="upBody">
+<body>
      <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
   <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">GUM Tournaments</a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,7 +91,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="game-Details.html">
+            <a class="nav-link " href="game-Details.html">
               <span data-feather="file" class="align-text-bottom"></span>
                 Game Details
 
@@ -105,7 +104,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="teamMan.html">
+            <a class="nav-link active" href="teamMan.html">
               <span data-feather="users" class="align-text-bottom"></span>
                 Players & Teams
             </a>
@@ -117,7 +116,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="upload.html">
+            <a class="nav-link" href="upload.html">
               <span data-feather="upload" class="align-text-bottom"></span>
             Upload Media
             </a>
@@ -147,39 +146,15 @@
         </ul>
       </div>
     </nav>
+<main>
 
-    <main>
-<h2 class="uph2">File Upload & Image Preview</h2>
-<!-- <p class="lead">No Plugins <b>Just Javascript</b></p> -->
 
-<!-- Upload  -->
-<form id="file-upload-form" class="uploader">
-  <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
 
-  <label for="file-upload" id="file-drag">
-    <img id="file-image" src="#" alt="Preview" class="hidden">
-    <div id="start">
-      <i class="fa fa-download" aria-hidden="true"></i>
-      <div>Select a file or drag here</div>
-      <div id="notimage" class="hidden">Please select an image</div>
-      <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
-    </div>
-    <div id="response" class="hidden">
-      <div id="messages"></div>
-      <progress class="progress" id="file-progress" value="0">
-        <span>0</span>%
-      </progress>
-    </div>
-  </label>
-</form>
+</main>
+     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
-    </main>
-    
-
-<script src="https://unpkg.com/feather-icons"></script>
-<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
-<script src="upload.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+      <!-- <script src="dashboard.js"></script> -->
 </body>
 </html>
