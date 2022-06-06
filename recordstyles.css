@@ -1,0 +1,35 @@
+/* body {
+    text-align: center;
+} */
+ main {
+   position: absolute;
+   margin-left: 250px;
+   margin-top:70px;
+}
+
+.button{
+     background: #272b2e;
+  background-image: -webkit-linear-gradient(top, #272b2e, #9ea4a8);
+  background-image: -moz-linear-gradient(top, #272b2e, #9ea4a8);
+  background-image: -ms-linear-gradient(top, #272b2e, #9ea4a8);
+  background-image: -o-linear-gradient(top, #272b2e, #9ea4a8);
+  background-image: linear-gradient(to bottom, #272b2e, #9ea4a8);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: #22292e;
+  background-image: -webkit-linear-gradient(top, #22292e, #b7bdc2);
+  background-image: -moz-linear-gradient(top, #22292e, #b7bdc2);
+  background-image: -ms-linear-gradient(top, #22292e, #b7bdc2);
+  background-image: -o-linear-gradient(top, #22292e, #b7bdc2);
+  background-image: linear-gradient(to bottom, #22292e, #b7bdc2);
+  text-decoration: none;
+}
