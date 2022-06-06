@@ -435,7 +435,7 @@
           <thead>
             <tr>
               <th scope="col">Ranking</th>
-                <th scope="col">Coach Name</th>
+                <th scope="col">Coach ID</th>
               <th scope="col">Position</th>
               <th scope="col">Cards Obtained</th>
               <th scope="col">Total Games Won</th>
