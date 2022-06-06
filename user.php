@@ -62,16 +62,21 @@ include "db-api.php";
         <h3>Welcome to GUM Field Hockey, here you can add any information like coach, players, teams etc</h3>
         <hr>
         <div style="width: 60%; margin-left:auto; margin-right: auto;">
-            <button class="btn" onClick="window.location.href = './signin.php'"><i class="fa fa-trophy"></i> Tournaments</button>
-            <button class="btn" onClick="window.location.href = './signin.php'"><i class="fa fa-icon-group"></i> Teams</button>
-            <button class="btn" onClick="window.location.href = './signin.php'"><i class="fa fa-user" aria-hidden="true"></i> Players</button>
-            <button class="btn" onClick="window.location.href = './signin.php'"><i class="fa fa-file-text"></i> Stats</button>
-            <button class="btn" onClick="window.location.href = './signin.php'"><i class="fa fa-calender-event"></i> Events</button>
-            <button class="btn" onClick="window.location.href = './signin.php'"><i class="fa fa-clipboard-data"></i> Up coming</button>
+            <button class="btn" onClick=""><i class="fa fa-trophy"></i> Tournaments</button>
+            <button class="btn" onClick="getTeams()"><i class="fa fa-icon-group"></i> Teams</button>
+            <button class="btn" onClick="getPlayers()"><i class="fa fa-user" aria-hidden="true"></i> Players</button>
+            <button class="btn" onClick="getStats()"><i class="fa fa-file-text"></i> Stats</button>
+            <button class="btn" onClick="getEvents()"><i class="fa fa-calender-event"></i> Events</button>
+            <button class="btn" onClick="upcoming()"><i class="fa fa-clipboard-data"></i> Up coming</button>
+
+            <?php 
+                $t = $db->getTournaments();
+                echo "<script>console.log(t)</script>"
+            ?>
         </div>
         <hr>
 
-        <div class="users" id="accordionExample">
+        <div class="items" id="items" >
             
         </div> <!-- end of users div -->
     </section>
@@ -81,6 +86,10 @@ include "db-api.php";
 
     <script>
         // when the delete button is clicked the user must be deleted
+        var items = document.getElementById("items");
+        function getTournaments(){
+           
+        }
     </script>
 </body>
 

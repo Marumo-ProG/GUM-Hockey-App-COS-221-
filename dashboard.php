@@ -1,3 +1,10 @@
+<?php 
+session_start();
+if(!isset($_SESSION['email'])){
+  echo "<script>alert('You are not Logged in, Please login'); window.location.href = './login.php'</script>";
+}
+include "db-api.php";
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -89,38 +96,38 @@
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="dashboard.html">
+            <a class="nav-link active" aria-current="page" href="dashboard.php">
               <i class="fa-solid fa-house"></i>
               Dashboard
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="game-Details.html">
+            <a class="nav-link" href="game-Details.php">
               <span data-feather="file" class="align-text-bottom"></span>
                 Game Details
 
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="tourMan.html">
+            <a class="nav-link" href="tourMan.php">
               <span data-feather="info" class="align-text-bottom"></span>
             Tournament Mangement
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="teamMan.html">
+            <a class="nav-link" href="teamMan.php">
               <span data-feather="users" class="align-text-bottom"></span>
                 Players & Teams
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Dashstatistics.html">
+            <a class="nav-link" href="Dashstatistics.php">
               <span data-feather="bar-chart-2" class="align-text-bottom"></span>
               Stats
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="upload.html">
+            <a class="nav-link" href="upload.php">
               <span data-feather="upload" class="align-text-bottom"></span>
             Upload Media
             </a>

@@ -62,18 +62,18 @@ include "db-api.php"; ?>
     <button style="float: right" class="btn" onClick="window.location.href = './signin.php'"><i class="fa fa-plus"></i> Add user</button>
 
     <div class="users" id="accordionExample">
-    <?php 
-            // getting users and printing them here
-            $users = $db->retrieveUsers();
-            $users = json_decode($users,true);
+      <?php
+      // getting users and printing them here
+      $users = $db->retrieveUsers();
+      $users = json_decode($users, true);
 
-            for( $i=0; $i < count($users); $i++){
-              echo "<div class='card'><div class='card-header' id='".$users[$i]["user_id"]."'><h5><button class='btn btn-link' type='button' data-toggle='collapse' data-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne'>".
-              $users[$i]["First_Name"]." ".$users[$i]["Last_Name"]."(#".$users[$i]["user_id"].")"."</button></h5></div><div class='collapse show' aria-labelledby='headingOne' data-parent='#accordionExample'><div class='card-body'>".
-              "<h6>First Name: ".$users[$i]["First_Name"]."</h6><h6>Last Name: ".$users[$i]["Last_Name"]."</h6><h6>Email: ".$users[$i]["Email"]."</h6><h6>Is_admin? ".$users[$i]["is_admin"]."</h6><button id='".$users[$i]["Email"]."' style='background-color: red; color: black;' class='btn remove'><i class='fa fa-trash'></i> Remove user</button></div></div</div>";
-            }
-          ?>
-      
+      for ($i = 0; $i < count($users); $i++) {
+        echo "<div class='card'><div class='card-header' id='" . $users[$i]["user_id"] . "'><h5><button class='btn btn-link' type='button' data-toggle='collapse' data-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne'>" .
+          $users[$i]["First_Name"] . " " . $users[$i]["Last_Name"] . "(#" . $users[$i]["user_id"] . ")" . "</button></h5></div><div class='collapse show' aria-labelledby='headingOne' data-parent='#accordionExample'><div class='card-body'>" .
+          "<h6>First Name: " . $users[$i]["First_Name"] . "</h6><h6>Last Name: " . $users[$i]["Last_Name"] . "</h6><h6>Email: " . $users[$i]["Email"] . "</h6><h6>Is_admin? " . $users[$i]["is_admin"] . "</h6><button id='" . $users[$i]["Email"] . "' style='background-color: red; color: black;' class='btn remove'><i class='fa fa-trash'></i> Remove user</button></div></div</div>";
+      }
+      ?>
+
     </div> <!-- end of users div -->
   </section>
 
@@ -82,7 +82,23 @@ include "db-api.php"; ?>
 
   <script>
     // when the delete button is clicked the user must be deleted
-    
+    var r = document.getElementsByClassName("remove");
+    for (var i = 0; i < r.length; i++) {
+      r[i].addEventListener("click", function() {
+        alert("user id: " + this.id + " about to be deleted");
+        
+        var form = document.createElement('form');
+        form.action = "./remove-user.php";
+        form.method = "POST";
+        var id = document.createElement('input');
+        id.type="text";
+        id.name = "email";
+        id.value = this.id;
+        form.appendChild(id);
+        document.body.appendChild(form);
+        form.submit();
+      })
+    }
   </script>
 </body>
 

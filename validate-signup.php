@@ -31,4 +31,5 @@ $db->signUser($firstName, $lastName, $email, $password, $user);
 
 // reload the page with a confirmation message
 
+
 ?>

@@ -21,7 +21,7 @@ if($db->login($email, $password)){
     if($user["is_admin"] == "Yes"){
         echo "<script>alert('Welcome back, ".$user["First_Name"]."'); window.location.href='./admin.php'; </script>";
     }else {
-        echo "<script>alert('Welcome back, ".$user["First_Name"]."'); window.location.href='./user.php'; </script>";
+        echo "<script>alert('Welcome back, ".$user["First_Name"]."'); window.location.href='./dashboard.php'; </script>";
     }
     
 }else

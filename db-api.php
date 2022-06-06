@@ -1,4 +1,5 @@
 <?php
+
   class Database
   {
       // my class variables 
@@ -42,7 +43,14 @@
           $query = "INSERT INTO users (First_Name, Last_Name, Email, Password, is_admin) VALUES ('$first_name', '$last_name','$email','$password', '$userType')";
           
           if ($this->conn->query($query) === TRUE) {
-            echo "<script>New record created successfully</script>";
+            session_start();
+            $_SESSION["email"] = $email;
+            if($userType == "Yes"){
+              echo "<script>alert('Your account has been created, you have been logged in!'); window.location.href='./admin.php'</script>";
+            } else {
+              echo "<script>alert('Your account has been created, you have been logged in!'); window.location.href='./dashboard.php'</script>";
+            }
+            
           } else {
             echo "Error: " . $query . "<br>" . $this->conn->error;
           }
@@ -135,24 +143,36 @@
 
       public function getTournaments(){
         $query = "SELECT * FROM tournement";
-        $result = $this->con->query($query);
+        $result = $this->conn->query($query);
         if($result->num_rows > 0){
           // send a json object with the data
-          $tournaments = array("count" => $result->num_rows, "teams" => []);   // to hold the array of users;
+          $tournaments = array();   // to hold the array of users;
           while($row = $result->fetch_assoc()){
-            array_push($tournaments["teams"], $row);
+            array_push($tournaments, $row);
           }
 
-          return json_encode($tournaments, true);
+          return $tournaments;
         }
       }
 
       // adding a register tournament function
+      public function registerTournament($name, $season, $country, $city){
+        $id = rand(100,999999999);
+        $query = "INSERT INTO tournement VALUES ('$id','$name','$season','$country','$city', NULL)";
+        if($this->conn->query($query) == true){
+          echo '<script>alert("Tournament added successfully, just reload to see it"); window.location.href="tourMan.php";</script>';
+        }
+        else {
+          echo $this->conn->error;
+        }
+      }
+
+      public function deleteTournament($id){
+        $query = " DELETE from games where tournement_id = '$id'; DELETE from tournement where Tournement_ID = '$id';";
+      }
 
   }
 
   $db = Database::instance();
-
-    
-    
+        
 ?>
