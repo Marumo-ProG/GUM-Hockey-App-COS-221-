@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="statsStyles.css">
+  <script type="text/javascript" src="stats.js"></script>
+    <title>Statistics</title>
+</head>
+
+  <header> <nav class="navbar navbar-expand-lg fixed-top navbar navbar-expand-lg fixed-top navbar-dark bg-dark navbar-scroll">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html"><img src="imgs/logo.jpeg" alt="" width="30" height="24" class="d-inline-block align-text-top"> Statistics</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="index.html">Overview</a><!--should this be index.html-->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="tournament-Info.html">Tournaments & Upcoming Matches</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="stats.html">Stats</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Dashboard</a>
+      </ul>
+    </div>
+  </div>
+</nav></header>
+
+<body>
+
+  <br><br><br>
+  <form>
+    <label for="stats">Display statistics for:</label>
+    <select name="stats" id="stats" onchange="ChangeTable()">
+      <option value="Players">Players</option>
+      <option value="Games">Games</option>
+      <option value="Teams">Teams</option>
+    </select>
+  </form>
+  <br>
+   <table class="PlayerStats" id="PlayerStats">
+      <tr>
+        <th style="text-align: center">Player</th>
+        <th style="text-align: center">Rating</th>
+        <th style="text-align: center">Total Goals</th>
+        <th style="text-align: center">Total Assists</th>
+        <th style="text-align: center">Nr Red Cards</th>
+        <th style="text-align: center">Nr Yellow Cards</th>
+        <th style="text-align: center">Nr Green Cards</th>
+      </tr>
+    </table>
+    <table class="GameStats" id="GameStats">
+      <tr>
+        <th style="text-align: center">Game</th>
+        <th style="text-align: center">Winner</th>
+        <th style="text-align: center">Loser</th>
+        <th style="text-align: center">Nr Short Corners</th>
+        <th style="text-align: center">Nr Long Corners</th>
+        <th style="text-align: center">Penalties</th>
+        <th style="text-align: center">Own Goals</th>
+        <th style="text-align: center">Free Hits</th>
+        <th style="text-align: center">Total Fouls</th>
+        <th style="text-align: center">Nr Red Cards</th>
+        <th style="text-align: center">Nr Yellow Cards</th>
+        <th style="text-align: center">Nr Green Cards</th>
+        <th style="text-align: center">Total Games</th> <!-- what ?-->
+        <th style="text-align: center">Extra Time</th>
+      </tr>
+    </table>
+    <table class="TeamStats" id="TeamStats">
+      <tr>
+        <th style="text-align: center">Team name</th>
+        <th style="text-align: center">Rating</th>
+        <th style="text-align: center">Wins</th>
+        <th style="text-align: center">Losses</th>
+        <th style="text-align: center">Draws</th>
+        <th style="text-align: center">Games Played</th>
+        <th style="text-align: center">Cards Issued</th>
+        <th style="text-align: center">Goals Conceded</th>
+        <th style="text-align: center">Shots on Goal</th>
+        <th style="text-align: center">Shots on target</th>
+        <th style="text-align: center">Goal Accuracy</th>
+        <th style="text-align: center">Losses</th>
+      </tr>
+    </table>
+  </body>
+<br><br><br>
+
+ <footer class="bg-light text-center text-lg-start">
+ 
+  <!-- <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Overview</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Stats</li>
+  </ol>-->
+
+
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-dark" href="https://mdbootstrap.com/">"GUM Tournaments"</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</html>
