@@ -1,14 +1,14 @@
-main {
+ main {
       position: absolute;
    margin-left: 230px;
    margin-top:70px;
 	font-family: 'Helvetica Neue', Helvetica, sans-serif;
-	/* margin: 0;
-	padding: 0;*/
-	/* text-align: center;  */
+	/* /margin: 0;
+	padding: 0;
+	text-align: center;   */
 }
 
-.tabs {
+/* .tabs {
 	display: inline-block;
 	width: 100%;
 	margin: 48px auto;
@@ -52,7 +52,7 @@ a {
 }
 
 .tab.tabClosed {
-	width: 0 !important;/* use important because we need to set the width of tabs in javascript in order to be able to animate them to 0 */
+	width: 0 !important;use important because we need to set the width of tabs in javascript in order to be able to animate them to 0
 }
 
 .tab.tabClosed a {
@@ -81,8 +81,21 @@ a {
 
 .closeTab:hover {
 	background: #DAE0E7;
-}
+} */
 
 form{
     width:1000px;
+} 
+
+#inputT1{
+	width:200px;
+	position: absolute;
+	margin-left: 5px;
 }
+
+#inputT2{
+	width:200px;
+	position: absolute;
+	margin-left: 5px;
+}
+
