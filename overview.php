@@ -11,7 +11,7 @@
 <body>
      <header> <nav class="navbar navbar-expand-lg fixed-top navbar navbar-expand-lg fixed-top navbar-dark bg-dark navbar-scroll">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.html"><img src="imgs/logo.jpeg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+    <a class="navbar-brand" href="index.php"><img src="imgs/logo.jpeg" alt="" width="30" height="24" class="d-inline-block align-text-top">
       "Tournament"
     </a></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,13 +20,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.html">Overview</a>
+          <a class="nav-link active" aria-current="page" href="index.php">Overview</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="tournament-Info.html">Tournaments & Upcoming Matches</a>
+          <a class="nav-link" href="tournament-Info.php">Tournaments & Upcoming Matches</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="stats.html">Stats</a>
+          <a class="nav-link" href="stats.php">Stats</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled">Dashboard</a>

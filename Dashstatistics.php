@@ -76,7 +76,7 @@
   <!-- <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search"> -->
   <div class="navbar-nav">
     <div class="nav-item text-nowrap">
-      <a class="nav-link px-3" href="index.html">Sign out</a>
+      <a class="nav-link px-3" href="index.php">Sign out</a>
     </div>
   </div>
 </header>
@@ -87,38 +87,38 @@
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="dashboard.html">
+            <a class="nav-link" aria-current="page" href="dashboard.php">
               <i class="fa-solid fa-house"></i>
               Dashboard
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="game-Details.html">
+            <a class="nav-link" href="game-Details.php">
               <span data-feather="file" class="align-text-bottom"></span>
                 Game Details
 
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="tourMan.html">
+            <a class="nav-link" href="tourMan.php">
               <span data-feather="info" class="align-text-bottom"></span>
             Tournament Mangement
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="teamMan.html">
+            <a class="nav-link" href="teamMan.php">
               <span data-feather="users" class="align-text-bottom"></span>
                 Players & Teams
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="Dashstatistics.html">
+            <a class="nav-link active" href="Dashstatistics.php">
               <span data-feather="bar-chart-2" class="align-text-bottom"></span>
               Stats
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="upload.html">
+            <a class="nav-link" href="upload.php">
               <span data-feather="upload" class="align-text-bottom"></span>
             Upload Media
             </a>

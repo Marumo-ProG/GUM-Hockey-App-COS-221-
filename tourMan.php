@@ -88,7 +88,7 @@ include "db-api.php";
     <!-- <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search"> -->
     <div class="navbar-nav">
       <div class="nav-item text-nowrap">
-        <a class="nav-link px-3" href="index.html">Sign out</a>
+        <a class="nav-link px-3" href="index.php">Sign out</a>
       </div>
     </div>
   </header>
@@ -99,38 +99,38 @@ include "db-api.php";
         <div class="position-sticky pt-3">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="dashboard.html">
+              <a class="nav-link active" aria-current="page" href="dashboard.php">
                 <i class="fa-solid fa-house"></i>
                 Dashboard
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="game-Details.html">
+              <a class="nav-link" href="game-Details.php">
                 <span data-feather="file" class="align-text-bottom"></span>
                 Game Details
 
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="tourMan.html">
+              <a class="nav-link" href="tourMan.php">
                 <span data-feather="info" class="align-text-bottom"></span>
                 Tournament Mangement
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="teamMan.html">
+              <a class="nav-link" href="teamMan.php">
                 <span data-feather="users" class="align-text-bottom"></span>
                 Players & Teams
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Dashstatistics.html">
+              <a class="nav-link" href="Dashstatistics.php">
                 <span data-feather="bar-chart-2" class="align-text-bottom"></span>
                 Stats
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="upload.html">
+              <a class="nav-link" href="upload.php">
                 <span data-feather="upload" class="align-text-bottom"></span>
                 Upload Media
               </a>
@@ -204,6 +204,58 @@ include "db-api.php";
             </div>
           </div>
         </div>
+
+        <!-- the update section -->
+        <button type="button" style="display: none;" id="updateButton" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update">
+          <i class="fa fa-plus"></i> Add Tournament
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="update" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update tournament information bellow</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form action="tournament-update.php" id="update-form" method="POST">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">ID</label>
+                    <input type="text" name="id" class="form-control" id="u-id" aria-describedby="emailHelp" placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Name</label>
+                    <input type="text" name="name" class="form-control" id="u-name" aria-describedby="emailHelp" placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Season</label>
+                    <input type="text" name="season" class="form-control" id="u-season" aria-describedby="emailHelp" placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Country</label>
+                    <input type="text" name="country" class="form-control" id="u-country" aria-describedby="emailHelp" placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">City</label>
+                    <input type="text" name="city" class="form-control" id="u-city" aria-describedby="emailHelp" placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Winner</label>
+                    <input type="text" name="winner" class="form-control" id="u-winner" aria-describedby="emailHelp" placeholder="Enter email">
+                  </div>
+                  <br>
+                  <button type="submit" class="btn btn-primary">Confirm</button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of update -->
         <div class="row">
           <?php
           // searching the tournaments data from the database
@@ -223,7 +275,6 @@ include "db-api.php";
                 <p class="card-text">Winner: ' . $winner . '</p>
                 <p class="card-text">Location: ' . $tournaments[$i]["Tournement_Location_City"] . ', ' . $tournaments[$i]["Tournement_Location_Country"] . '</p>
                 <a href="#" id="' . $tournaments[$i]["Tournement_ID"] . '" class="btn btn-primary update">Update information</a>
-                <button id="' . $tournaments[$i]["Tournement_ID"] . '" style="background-color: red; color: black;" class="btn remover"><i class="fa fa-trash"></i> Delete Tournament</button>
               </div>
             </div>
           </div>
@@ -237,16 +288,16 @@ include "db-api.php";
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
       <script>
-        var r = document.getElementsByClassName('remover');
         var u = document.getElementsByClassName('update');
         var xhttp = new XMLHttpRequest();
-        for (var i = 0; i < r.length; i++) {
+        var updateButton = document.getElementById("updateButton");
+        var updateForm = document.getElementById("update-form");
+        for (var i = 0; i < u.length; i++) {
           u[i].addEventListener("click", function() {
             alert("updating tournament: " + this.id);
-          })
-          r[i].addEventListener("click", function() {
-            alert("deleting tournament: " + this.id);
+            document.getElementById("u-id").value = this.id;
             
+            updateButton.click();
           })
         }
       </script>

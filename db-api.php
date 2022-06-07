@@ -96,15 +96,10 @@
       // this function will be used to get all the teams information in the databse
       public function getTeams(){
         $query = "SELECT * FROM teams";
-        $result = $this->con->query($query);
+        $result = $this->conn->query($query);
         if($result->num_rows > 0){
           // send a json object with the data
-          $teams = array("count" => $result->num_rows, "teams" => []);   // to hold the array of users;
-          while($row = $result->fetch_assoc()){
-            array_push($teams["teams"], $row);
-          }
-
-          return json_encode($teams, true);
+          return $result;
         }
       }
 
@@ -129,6 +124,17 @@
           echo $this->conn->error;
         }
       }
+      public function getCoach($id){
+        $query = "SELECT * FROM coaches WHERE Coaches_id='$id'";
+        $result = $this->conn->query($query);
+        return $result;
+      }
+      public function getTeam($id){
+        $query = "SELECT * FROM teams WHERE Team_name='$id'";
+        $result = $this->conn->query($query);
+        
+        return $result;
+      }
 
       // this funtion will be used to register a player
       public function registerPlayer($player_id,$teamName, $first_name, $last_name, $position, $dob){
@@ -139,6 +145,16 @@
         else {
           echo $this->conn->error;
         }
+      }
+      public function getPlayer($id){
+        $query = "SELECT * FROM players WHERE Player_id='$id'";
+        $result = $this->conn->query($query);
+        return $result;
+      }
+      public function getTeamPlayers($id){
+        $query = "SELECT * FROM players WHERE Team_name='$id'";
+        $result = $this->conn->query($query);
+        return $result;
       }
 
       public function getTournaments(){
@@ -157,8 +173,8 @@
 
       // adding a register tournament function
       public function registerTournament($name, $season, $country, $city){
-        $id = rand(100,999999999);
-        $query = "INSERT INTO tournement VALUES ('$id','$name','$season','$country','$city', NULL)";
+        //$id = rand(100,999999999);
+        $query = "INSERT INTO tournement VALUES ('$name','$season','$country','$city', NULL)";
         if($this->conn->query($query) == true){
           echo '<script>alert("Tournament added successfully, just reload to see it"); window.location.href="tourMan.php";</script>';
         }
@@ -167,9 +183,85 @@
         }
       }
 
-      public function deleteTournament($id){
-        $query = " DELETE from games where tournement_id = '$id'; DELETE from tournement where Tournement_ID = '$id';";
+      public function retriveTournament($id){
+        $query = "SELECT * FROM tournement WHERE Tournement_ID='$id'";
+        $result = $this->conn->query($query);
+
+        return $result->fetch_assoc();
       }
+
+      public function tournamentUpdate($id,$name, $season, $country, $city, $winner){
+        $query = "UPDATE tournement SET Tournement_Name = '$name', Tournement_Season= '$season', Tournement_Location_Country='$country', Tournement_Location_City='$city'
+        ,Tournement_Winner = '$winner' WHERE Tournement_ID = '$id';";
+
+        if($this->conn->query($query) == true){
+          echo "<script>console.log('Tournament data updated successfully'); window.location.href='./tourMan.php'</script>";
+        }else {
+          echo $this->conn->error;
+        }
+      }
+
+      public function teamUpdate($name, $coach_id, $captain, $origin){
+        $query = "UPDATE teams SET Coach_id= '$coach_id', Team_Captain='$captain', Team_Origin='$origin' WHERE Team_name = '$name'";
+        if($this->conn->query($query) == true){
+          echo "<script>console.log('Team data updated successfully'); window.location.href='./tourMan.php'</script>";
+        }else {
+          echo $this->conn->error;
+        }
+      }
+
+      public function coachUpdate( $coach_id, $name,$gender, $position,$experience, $sDate, $eDate){
+        $query = "UPDATE coaches SET Team_name='$name', Gender='$gender', Position='$position', Experience='$experience', Starting_Date='$sDate', Ending_Date='$eDate' WHERE Coaches_id = '$coach_id'";
+        if($this->conn->query($query) == true){
+          echo "<script>console.log('Team data updated successfully'); window.location.href='./tourMan.php'</script>";
+        }else {
+          echo $this->conn->error;
+        }
+      }
+
+      public function getGames(){
+        $query = "SELECT * FROM games";
+        $result = $this->conn->query($query);
+        
+        return $result;
+      }
+      public function getUmpire($license){
+        $query = "SELECT * FROM umpire WHERE Umpire_licence='$license'";
+        $result = $this->conn->query($query);
+        return $result;
+      }
+      public function getShorts(){
+        $query = "SELECT * FROM event_shots ";
+        $result = $this->conn->query($query);
+        return $result;
+      }
+      public function getFouls(){
+        $query = "SELECT * FROM event_fouls ";
+        $result = $this->conn->query($query);
+        return $result;
+      }
+      public function getHits(){
+        $query = "SELECT * FROM event_hits ";
+        $result = $this->conn->query($query);
+        return $result;
+      }
+
+      public function getSubs(){
+        $query = "SELECT * FROM event_substitution ";
+        $result = $this->conn->query($query);
+        return $result;
+      }
+      public function getGameStats($id){
+        $query = "SELECT * FROM game_stats ";
+        $result = $this->conn->query($query);
+        return $result;
+      }
+      public function getPlayerStats($id){
+        $query = "SELECT * FROM player_stats ";
+        $result = $this->conn->query($query);
+        return $result;
+      }
+
 
   }
 
