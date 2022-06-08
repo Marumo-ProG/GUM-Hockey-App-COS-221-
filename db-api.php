@@ -338,7 +338,30 @@
           echo $this->conn->error;
         }
       }
-
+      public function regiterSub($gameId, $onPlayer, $offPlayer, $position){
+        $query = "INSERT INTO event_substitution VALUES ('$gameId','$onPlayer', '$offPlayer','$position')";
+        if($this->conn->query($query) == true){
+          echo "<script>alert('Sub added! '); window.location.href='./recEvents.php'</script>";
+        }else {
+          echo $this->conn->error;
+        }
+      }
+      public function registerShot($gameId, $player, $type, $assist, $saved, $intercept){
+        $query = "INSERT INTO event_shots VALUES ('$gameId','$player', '$type','$assist', '$saved','$intercept')";
+        if($this->conn->query($query) == true){
+          echo "<script>alert('Sub added! '); window.location.href='./recEvents.php'</script>";
+        }else {
+          echo $this->conn->error;
+        }
+      }
+      public function registerHits($gameId, $player, $type, $intercept){
+        $query = "INSERT INTO event_hits VALUES ('$gameId','$player', '$type','$intercept')";
+        if($this->conn->query($query) == true){
+          echo "<script>alert('Sub added! '); window.location.href='./recEvents.php'</script>";
+        }else {
+          echo $this->conn->error;
+        }
+      }
 
 
   }

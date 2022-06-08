@@ -3,12 +3,12 @@
     $time = new DateTime();
     $time = $time->format('Y-m-d H:i:s');
     $gameId = $_POST["game"];
-    $player = $_POST["player"];
+    $onPlayer = $_POST["onPlayer"];
+    $offPlayer = $_POST["offPlayer"];
     $team = $_POST["team"];
-    $card = $_POST["card"];
-    $type = $_POST["type"];
+    $position = $_POST["position"];
     $t = "Substitution";
 
     $db->registerEvent($time, $t, $gameId);
-    $db->registerFoul($gameId, $player, $card, $type);
+    $db->regiterSub($gameId, $onPlayer, $offPlayer, $team, $position);
 ?>

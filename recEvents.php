@@ -1,5 +1,5 @@
 <?php
-  include "db-api.php";
+include "db-api.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -244,7 +244,7 @@
 
         <div id="Foul" class="w3-container event">
           <form id="FoulForm" action="./register-foul.php" method="POST">
-          <div class="form-group row">
+            <div class="form-group row">
               <label for="gameID" class="col-sm-2 col-form-label">Choose game ID</label>
               <div class="col-sm-10">
                 <select class="form-control" name="game" id="gameID">
@@ -252,14 +252,14 @@
                   $t = $db->getGames();
                   while ($row = $t->fetch_assoc()) {
                     echo '
-                          <option value="' . $row["Games_id"] . '">' .$row["Games_id"]. "(".$row["Team_1"]." VS ".$row["Team_2"].")".'</option>
+                          <option value="' . $row["Games_id"] . '">' . $row["Games_id"] . "(" . $row["Team_1"] . " VS " . $row["Team_2"] . ")" . '</option>
                         ';
                   }
                   ?>
                 </select>
               </div>
             </div>
-            
+
             <div class="form-group row">
               <label for="player" class="col-sm-2 col-form-label">Foul Committer</label>
               <div class="col-sm-10">
@@ -268,7 +268,7 @@
                   $t = $db->getPlayers();
                   while ($row = $t->fetch_assoc()) {
                     echo '
-                          <option value="' . $row["Player_id"] . '">' . $row["First_Name"] . " " . $row["Last_Name"]."(".$row["Team_name"].")". '</option>
+                          <option value="' . $row["Player_id"] . '">' . $row["First_Name"] . " " . $row["Last_Name"] . "(" . $row["Team_name"] . ")" . '</option>
                         ';
                   }
                   ?>
@@ -278,16 +278,16 @@
             <div class="form-group row">
               <label for="team" class="col-sm-2 col-form-label">Type</label>
               <div class="col-sm-10">
-              <select class="form-control" name="type" id="team">
-                 <option value="Travelling">Travelling</option>
-                 <option value="Obstruction">Obstruction</option>
-                 <option value="Backstick">Backstick</option>
-                 <option value="Highball">Highball</option>
-                 <option value="Shoulder">Shoulder</option>
-                 <option value="Advancing'">Advancing</option>
-                 <option value="Interfence">Interfence</option>
-                 <option value="Blocking">Blocking</option>
-                 <option value="Rough Play">Rough Play</option>
+                <select class="form-control" name="type" id="team">
+                  <option value="Travelling">Travelling</option>
+                  <option value="Obstruction">Obstruction</option>
+                  <option value="Backstick">Backstick</option>
+                  <option value="Highball">Highball</option>
+                  <option value="Shoulder">Shoulder</option>
+                  <option value="Advancing'">Advancing</option>
+                  <option value="Interfence">Interfence</option>
+                  <option value="Blocking">Blocking</option>
+                  <option value="Rough Play">Rough Play</option>
                 </select>
               </div>
             </div>
@@ -322,7 +322,7 @@
                 </div>
                 <br>
             </fieldset>
-            
+
             <div class="form-group row">
               <div class="col-sm-10">
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -331,11 +331,11 @@
           </form>
         </div>
 
-        
+
 
         <div id="Sub" class="w3-container event" style="display:none">
           <form action="./register-sub.php" method="POST">
-          <div class="form-group row">
+            <div class="form-group row">
               <label for="gameID" class="col-sm-2 col-form-label">Choose game ID</label>
               <div class="col-sm-10">
                 <select class="form-control" name="game" id="gameID">
@@ -343,14 +343,14 @@
                   $t = $db->getGames();
                   while ($row = $t->fetch_assoc()) {
                     echo '
-                          <option value="' . $row["Games_id"] . '">' .$row["Games_id"]. "(".$row["Team_1"]." VS ".$row["Team_2"].")".'</option>
+                          <option value="' . $row["Games_id"] . '">' . $row["Games_id"] . "(" . $row["Team_1"] . " VS " . $row["Team_2"] . ")" . '</option>
                         ';
                   }
                   ?>
                 </select>
               </div>
             </div>
-          <div class="form-group row">
+            <div class="form-group row">
               <label for="player" class="col-sm-2 col-form-label">On Player</label>
               <div class="col-sm-10">
                 <select class="form-control" name="onPlayer" id="player">
@@ -358,7 +358,7 @@
                   $t = $db->getPlayers();
                   while ($row = $t->fetch_assoc()) {
                     echo '
-                          <option value="' . $row["Player_id"] . '">' . $row["First_Name"] . " " . $row["Last_Name"]."(".$row["Team_name"].")". '</option>
+                          <option value="' . $row["Player_id"] . '">' . $row["First_Name"] . " " . $row["Last_Name"] . "(" . $row["Team_name"] . ")" . '</option>
                         ';
                   }
                   ?>
@@ -373,28 +373,14 @@
                   $t = $db->getPlayers();
                   while ($row = $t->fetch_assoc()) {
                     echo '
-                          <option value="' . $row["Player_id"] . '">' . $row["First_Name"] . " " . $row["Last_Name"]."(".$row["Team_name"].")". '</option>
+                          <option value="' . $row["Player_id"] . '">' . $row["First_Name"] . " " . $row["Last_Name"] . "(" . $row["Team_name"] . ")" . '</option>
                         ';
                   }
                   ?>
                 </select>
               </div>
             </div>
-            <div class="form-group row">
-              <label for="inputCommiter" class="col-sm-2 col-form-label">Team Substituting</label>
-              <div class="col-sm-10">
-              <select class="form-control" name="team" id="offPlayer">
-                  <?php
-                  $t = $db->getTeams();
-                  while ($row = $t->fetch_assoc()) {
-                    echo '
-                          <option value="' . $row["Player_id"] . '">' . $row["Team_name"] . '</option>
-                        ';
-                  }
-                  ?>
-                </select>
-              </div>
-            </div>
+
             <br>
             <div class="form-group row">
               <label for="inputCommiter" class="col-sm-2 col-form-label">Postion</label>
@@ -412,60 +398,85 @@
         </div>
 
         <div id="Shot" class="w3-container event" style="display:none">
-          <form>
+          <form action="./register-shot.php" method="POST">
             <div class="form-group row">
-              <label for="inputCommiter" class="col-sm-2 col-form-label">Player Shot</label>
+              <label for="gameID" class="col-sm-2 col-form-label">Choose game ID</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputEmail3" placeholder="Player that Attempted Shot">
+                <select class="form-control" name="game" id="gameID">
+                  <?php
+                  $t = $db->getGames();
+                  while ($row = $t->fetch_assoc()) {
+                    echo '
+                          <option value="' . $row["Games_id"] . '">' . $row["Games_id"] . "(" . $row["Team_1"] . " VS " . $row["Team_2"] . ")" . '</option>
+                        ';
+                  }
+                  ?>
+                </select>
               </div>
             </div>
             <div class="form-group row">
-              <label for="input" class="col-sm-2 col-form-label">Team</label>
+              <label for="offPlayer" class="col-sm-2 col-form-label">Shot Taker</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="input" placeholder="Team that Shot">
+                <select class="form-control" name="player" id="offPlayer">
+                  <?php
+                  $t = $db->getPlayers();
+                  while ($row = $t->fetch_assoc()) {
+                    echo '
+                          <option value="' . $row["Player_id"] . '">' . $row["First_Name"] . " " . $row["Last_Name"] . "(" . $row["Team_name"] . ")" . '</option>
+                        ';
+                  }
+                  ?>
+                </select>
               </div>
             </div>
+
             <fieldset class="form-group">
               <div class="row">
                 <legend class="col-form-label col-sm-2 pt-0">Type of shot</legend>
                 <div class="col-sm-10">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                    <input class="form-check-input" type="radio" name="type" id="gridRadios1" value="Penality" checked>
                     <label class="form-check-label" for="gridRadios1">
                       Penalty Stroke
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                    <input class="form-check-input" type="radio" name="type" id="gridRadios3" value="Field Goal">
                     <label class="form-check-label" for="gridRadios3">
-                      Penalty
+                      Field Goal
                     </label>
                   </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                    <label class="form-check-label" for="gridRadios2">
-                      Field
-                    </label>
-                  </div>
+
                 </div>
               </div>
               <br>
             </fieldset>
             <div class="form-group row">
-              <div class="col-sm-2">Did the shot reult in a goal?</div>
+              <div class="col-sm-2">Was the short assisted?</div>
               <div class="col-sm-10">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="gridCheck1">
+                  <input name="assisted" class="form-check-input" value="True"  type="checkbox" id="gridCheck1">
+                  <label class="form-check-label" for="gridCheck1">
+                    Yes
+                  </label>
+                </div>
+              </div><div class="col-sm-2">Was the short saved?</div>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input name="saved" value="True" class="form-check-input" type="checkbox" id="gridCheck1">
                   <label class="form-check-label" for="gridCheck1">
                     Yes
                   </label>
                 </div>
               </div>
-            </div>
-            <div class="form-group row">
-              <label for="inputCommiter" class="col-sm-2 col-form-label">If not, who intercepted?</label>
+              <div class="col-sm-2">Was the short intercepted?</div>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputEmail3" placeholder="Player that Intercepted">
+                <div class="form-check">
+                  <input name="intercept" value="True" class="form-check-input" type="checkbox" id="gridCheck1">
+                  <label class="form-check-label" for="gridCheck1">
+                    Yes
+                  </label>
+                </div>
               </div>
             </div>
             <div class="form-group row">
@@ -542,31 +553,50 @@
 
 
         <div id="Corner" class="w3-container event" style="display:none">
-          <form>
-            <div class="form-group row">
-              <label for="inputCommiter" class="col-sm-2 col-form-label">Team awarded Corner</label>
+          <form action="./register-hits.php" method="POST">
+          <div class="form-group row">
+              <label for="gameID" class="col-sm-2 col-form-label">Choose game ID</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputEmail3" placeholder="Player Substituting">
+                <select class="form-control" name="game" id="gameID">
+                  <?php
+                  $t = $db->getGames();
+                  while ($row = $t->fetch_assoc()) {
+                    echo '
+                          <option value="' . $row["Games_id"] . '">' . $row["Games_id"] . "(" . $row["Team_1"] . " VS " . $row["Team_2"] . ")" . '</option>
+                        ';
+                  }
+                  ?>
+                </select>
               </div>
             </div>
             <div class="form-group row">
-              <label for="input" class="col-sm-2 col-form-label">Player taking Corner</label>
+              <label for="offPlayer" class="col-sm-2 col-form-label">Player taking the hit</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="input" placeholder="Player Being Substituted">
+                <select class="form-control" name="player" id="offPlayer">
+                  <?php
+                  $t = $db->getPlayers();
+                  while ($row = $t->fetch_assoc()) {
+                    echo '
+                          <option value="' . $row["Player_id"] . '">' . $row["First_Name"] . " " . $row["Last_Name"] . "(" . $row["Team_name"] . ")" . '</option>
+                        ';
+                  }
+                  ?>
+                </select>
               </div>
             </div>
+           
             <fieldset class="form-group">
               <div class="row">
                 <legend class="col-form-label col-sm-2 pt-0">Type of Corner</legend>
                 <div class="col-sm-10">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                    <input class="form-check-input" type="radio" name="type" id="gridRadios1" value="16 yard hit" checked>
                     <label class="form-check-label" for="gridRadios1">
                       Long Corner
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                    <input class="form-check-input" type="radio" name="type" id="gridRadios3" value="Free hit">
                     <label class="form-check-label" for="gridRadios3">
                       Short Corner
                     </label>
@@ -576,10 +606,10 @@
               <br>
             </fieldset>
             <div class="form-group row">
-              <div class="col-sm-2">Did the corner reult in a goal?</div>
+              <div class="col-sm-2">Intercepted?</div>
               <div class="col-sm-10">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="gridCheck1">
+                  <input name="intercepted" class="form-check-input" type="checkbox" id="gridCheck1">
                   <label class="form-check-label" for="gridCheck1">
                     Yes
                   </label>
