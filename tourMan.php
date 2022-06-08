@@ -105,32 +105,27 @@ include "db-api.php";
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="game-Details.php">
+              <a class="nav-link" href="./game-Details.php">
                 <span data-feather="file" class="align-text-bottom"></span>
                 Game Details
 
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="tourMan.php">
+              <a class="nav-link" href="./tourMan.php">
                 <span data-feather="info" class="align-text-bottom"></span>
                 Tournament Mangement
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="teamMan.php">
+              <a class="nav-link" href="./teamMan.php">
                 <span data-feather="users" class="align-text-bottom"></span>
                 Players & Teams
               </a>
             </li>
+            
             <li class="nav-item">
-              <a class="nav-link" href="Dashstatistics.php">
-                <span data-feather="bar-chart-2" class="align-text-bottom"></span>
-                Stats
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="upload.php">
+              <a class="nav-link" href="./upload.php">
                 <span data-feather="upload" class="align-text-bottom"></span>
                 Upload Media
               </a>
@@ -139,25 +134,12 @@ include "db-api.php";
 
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
 
-            <a class="link-secondary" href="#" aria-label="Add a new report">
+            <a class="link-secondary" href="./recEvents.php" aria-label="Add a new report">
               <!-- <i class="fa-solid fa-plus"></i> -->
-              <span>Record Games</span>
+              <span>Record Game Events</span>
             </a>
           </h6>
-          <ul class="nav flex-column mb-2">
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="file-text" class="align-text-bottom"></span>
-                Current month
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="file-text" class="align-text-bottom"></span>
-                Last quarter
-              </a>
-            </li>
-          </ul>
+          
         </div>
       </nav>
 

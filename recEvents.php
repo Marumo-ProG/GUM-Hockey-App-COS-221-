@@ -140,20 +140,7 @@ include "db-api.php";
               <span><strong>Record Games</strong></span>
             </a>
           </h6>
-          <ul class="nav flex-column mb-2">
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="file-text" class="align-text-bottom"></span>
-                Current month
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="file-text" class="align-text-bottom"></span>
-                Last quarter
-              </a>
-            </li>
-          </ul>
+          
         </div>
       </nav>
 
@@ -239,7 +226,6 @@ include "db-api.php";
           <button class="w3-bar-item w3-button" onclick="openEvent('Sub')">Substitution</button>
           <button class="w3-bar-item w3-button" onclick="openEvent('Shot')">Shot</button>
           <button class="w3-bar-item w3-button" onclick="openEvent('Corner')">Corner</button>
-          <button class="w3-bar-item w3-button" onclick="openEvent('GW')">Game Winner</button>
         </div>
 
         <div id="Foul" class="w3-container event">
@@ -624,59 +610,6 @@ include "db-api.php";
           </form>
         </div>
 
-
-        <div id="GW" class="w3-container event" style="display:none">
-          <form>
-            <div class="form-group row">
-              <label for="input" class="col-sm-2 col-form-label">Tournament ID of Game</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="input" placeholder="What Tournmanet is this game from?">
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="inputCommiter" class="col-sm-2 col-form-label">Game ID</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputEmail3" placeholder="Identify Game">
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="input" class="col-sm-2 col-form-label">Game Round</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="input" placeholder="What round was this game?">
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="input" class="col-sm-2 col-form-label">Team that Won</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="input" placeholder="Which team won?">
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="input" class="col-sm-2 col-form-label">Team that Lost</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="input" placeholder="Which team lost?">
-              </div>
-            </div>
-            <h3>Final Result</h3>
-            <div class="form-group row">
-              <label for="inputCommiter" class="col-sm-2 col-form-label">Winner</label>
-              <div class="col-sm-10">
-                <input type="number" class="form-control" id="inputT1" placeholder="Winner score" min="0">
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="inputCommiter" class="col-sm-2 col-form-label">Loser</label>
-              <div class="col-sm-10">
-                <input type="number" class="form-control" id="inputT2" placeholder="Losing team score" min="0">
-              </div>
-            </div>
-            <div class="form-group row">
-              <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
-            </div>
-          </form>
-        </div>
       </main>
 
       <script src="recEvent.js"></script>

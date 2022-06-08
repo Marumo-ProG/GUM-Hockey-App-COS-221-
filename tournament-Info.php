@@ -21,14 +21,12 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="index.php">Overview</a> <!--should this be index.php-->
+          <a class="nav-link" aria-current="page" href="./index.php">Overview</a> <!--should this be index.php-->
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="tournament-Info.php">Tournaments & Upcoming Matches</a>
+          <a class="nav-link active" href="./tournament-Info.php">Tournaments & Upcoming Matches</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="stats.php">Stats</a>
-        </li>
+       
         <li class="nav-item">
           <a class="nav-link disabled">Dashboard</a>
       </ul>

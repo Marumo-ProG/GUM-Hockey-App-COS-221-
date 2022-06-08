@@ -113,12 +113,7 @@
 								Players & Teams
 							</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								<span data-feather="bar-chart-2" class="align-text-bottom"></span>
-								Stats
-							</a>
-						</li>
+						
 						<li class="nav-item">
 							<a class="nav-link" href="upload.php">
 								<span data-feather="upload" class="align-text-bottom"></span>
@@ -133,20 +128,7 @@
 							<span data-feather="plus-circle" class="align-text-bottom"></span>
 						</a>
 					</h6>
-					<ul class="nav flex-column mb-2">
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								<span data-feather="file-text" class="align-text-bottom"></span>
-								Current month
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">
-								<span data-feather="file-text" class="align-text-bottom"></span>
-								Last quarter
-							</a>
-						</li>
-					</ul>
+					
 				</div>
 			</nav>
 

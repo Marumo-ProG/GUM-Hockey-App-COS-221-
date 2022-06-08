@@ -112,12 +112,7 @@
                 Players & Teams
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Dashstatistics.php">
-                <span data-feather="bar-chart-2" class="align-text-bottom"></span>
-                Stats
-              </a>
-            </li>
+            
             <li class="nav-item">
               <a class="nav-link" href="upload.php">
                 <span data-feather="upload" class="align-text-bottom"></span>
@@ -128,25 +123,12 @@
 
           <p class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
             <!-- <span>Record Games</span> -->
-            <a class="link-secondary" href="#" aria-label="Add a new report">
-              <span>Record Games</span>
+            <a class="link-secondary" href="./recEvents.php" aria-label="Add a new report">
+              <span>Record Game Event</span>
               <!-- <span data-feather="plus-circle" class="align-text-bottom"></span> -->
             </a>
           <h6>
-            <ul class="nav flex-column mb-2">
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text" class="align-text-bottom"></span>
-                  Current month
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text" class="align-text-bottom"></span>
-                  Last quarter
-                </a>
-              </li>
-            </ul>
+            
         </div>
       </nav>
       <main>
@@ -328,21 +310,20 @@
               
             </div>
             ';
-            while ($player = $players->fetch_assoc()) {
-              echo '
+            echo '
               <div class="col-md-6">
               <h5>Players</h5>
-              <hr>
-              <h6><a href="#">'.$player["First_Name"]." ".$player["Last_Name"].'</a></h6>
-
-              </div>
-              <hr>
-              <button style="width: 50%;color: blue" id="'.$player["Team_name"].'" class="btn btn-default updateTeam">Update Team</button>
-              <button style="width: 50%;color: blue" id="'.$coach["Coaches_id"].'" class="btn btn-default updateCoach">Update Coach</button>
-              <hr>
-              </div>
-              ';
+              <hr>';
+            while ($player = $players->fetch_assoc()) {
+              
+              echo '<h6><a href="#">'.$player["First_Name"]." ".$player["Last_Name"].'</a></h6>';
             }
+            echo '</div>
+            <hr>
+            <button style="width: 50%;color: blue" id="'.$row["Team_name"].'" class="btn btn-default updateTeam">Update Team</button>
+            <button style="width: 50%;color: blue" id="'.$row["Coach_id"].'" class="btn btn-default updateCoach">Update Coach</button>
+            <hr>
+            </div>';
           }
 
           ?>
