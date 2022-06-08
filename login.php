@@ -45,7 +45,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li><a href="overview.php"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a></li>
+            <li><a href="index.php"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a></li>
           </ul>
         </div>
       </div>

@@ -13,7 +13,7 @@
       private function __construct()
       {
           // connecting to the database
-          $this->conn = new mysqli("127.0.0.1:3306","root","20485001","field_hockey");
+          $this->conn = new mysqli("127.0.0.1:3306","root","20485001","f_hocky");
           if($this->conn == false){
               die("error connecting to the database");
           }
@@ -112,7 +112,7 @@
       }
 
       public function registerGame( $umpire, $tournamentId, $team1, $team2, $dom, $altDom, $duration,$round){
-        $query = "INSERT INTO games (Umpire_licence,Tournement_ID,Team_1, Team_2, Date_of_Match, Alt_match_day,Time_duration,Game_round) VALUES ('$umpire', '$tournamentId', '$team1', '$team2', '$dom', '$altDom',$duration, $round)";
+        $query = "INSERT INTO games (Umpire_licence,tournament_ID,Team_1, Team_2, Date_of_Match, Alt_match_day,Time_duration,Game_round) VALUES ('$umpire', '$tournamentId', '$team1', '$team2', '$dom', '$altDom',$duration, $round)";
 
         if($this->conn->query($query) == true){
           echo '<script>alert("Game added successfully"); window.location.href="./dashboard.php"</script>';
@@ -201,7 +201,7 @@
       // adding a register tournament function
       public function registerTournament($name, $season, $country, $city){
         //$id = rand(100,999999999);
-        $query = "INSERT INTO tournement VALUES ('$name','$season','$country','$city', NULL)";
+        $query = "INSERT INTO tournament VALUES ('$name','$season','$country','$city', NULL)";
         if($this->conn->query($query) == true){
           echo '<script>alert("Tournament added successfully, just reload to see it"); window.location.href="tourMan.php";</script>';
         }
@@ -211,15 +211,15 @@
       }
 
       public function retriveTournament($id){
-        $query = "SELECT * FROM tournement WHERE Tournement_ID='$id'";
+        $query = "SELECT * FROM tournament WHERE tournament_ID='$id'";
         $result = $this->conn->query($query);
 
         return $result->fetch_assoc();
       }
 
       public function tournamentUpdate($id,$name, $season, $country, $city, $winner){
-        $query = "UPDATE tournement SET Tournement_Name = '$name', Tournement_Season= '$season', Tournement_Location_Country='$country', Tournement_Location_City='$city'
-        ,Tournement_Winner = '$winner' WHERE Tournement_ID = '$id';";
+        $query = "UPDATE tournament SET tournament_Name = '$name', tournament_Season= '$season', tournament_Location_Country='$country', tournament_Location_City='$city'
+        ,tournament_Winner = '$winner' WHERE tournament_ID = '$id';";
 
         if($this->conn->query($query) == true){
           echo "<script>console.log('Tournament data updated successfully'); window.location.href='./tourMan.php'</script>";
@@ -309,7 +309,7 @@
         return $result;
       }
       public function getTournament($id){
-        $query = "SELECT * FROM tournement WHERE Tournement_ID = '$id' ";
+        $query = "SELECT * FROM tournament WHERE Tournament_ID='$id' ";
         $result = $this->conn->query($query);
         return $result;
       }
