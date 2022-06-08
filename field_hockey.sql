@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2022 at 04:46 AM
+-- Generation Time: Jun 08, 2022 at 05:48 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -1169,7 +1169,8 @@ ALTER TABLE `events`
 -- Constraints for table `events_corner`
 --
 ALTER TABLE `events_corner`
-  ADD CONSTRAINT `fk_corner_player_id` FOREIGN KEY (`Player_id`) REFERENCES `players` (`Player_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_corner_player_id` FOREIGN KEY (`Player_id`) REFERENCES `players` (`Player_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_events_key` FOREIGN KEY (`id`) REFERENCES `events` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `event_fouls`
@@ -1181,6 +1182,7 @@ ALTER TABLE `event_fouls`
 -- Constraints for table `event_hits`
 --
 ALTER TABLE `event_hits`
+  ADD CONSTRAINT `fk_events_id1` FOREIGN KEY (`id`) REFERENCES `events` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_hit_event_player_id` FOREIGN KEY (`Player_id`) REFERENCES `players` (`Player_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
@@ -1188,7 +1190,8 @@ ALTER TABLE `event_hits`
 --
 ALTER TABLE `event_substitution`
   ADD CONSTRAINT `fk_Subs_player_off` FOREIGN KEY (`Player_off`) REFERENCES `players` (`Player_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Subs_player_on` FOREIGN KEY (`Player_on`) REFERENCES `players` (`Player_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Subs_player_on` FOREIGN KEY (`Player_on`) REFERENCES `players` (`Player_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_events_id` FOREIGN KEY (`id`) REFERENCES `events` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `games`
