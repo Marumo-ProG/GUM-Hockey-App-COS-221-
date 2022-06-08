@@ -1,0 +1,5 @@
+To access the .git folder please do the following:
+ 1. Unzip the archive containing the .git folder
+ 2. Navigate the .git folder and locate the ReadMe.txt
+ 3. Open the file, the repository for the Github website is found inside
+ 4. Follow the instruction on how to navigate your way about the website
