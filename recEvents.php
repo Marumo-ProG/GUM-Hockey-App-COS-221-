@@ -119,12 +119,7 @@ include "db-api.php";
                 Players & Teams
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Dashstatistics.php">
-                <span data-feather="bar-chart-2" class="align-text-bottom"></span>
-                Stats
-              </a>
-            </li>
+            
             <li class="nav-item">
               <a class="nav-link" href="upload.php">
                 <span data-feather="upload" class="align-text-bottom"></span>
@@ -140,7 +135,7 @@ include "db-api.php";
               <span><strong>Record Games</strong></span>
             </a>
           </h6>
-          
+
         </div>
       </nav>
 
@@ -421,7 +416,7 @@ include "db-api.php";
                 <legend class="col-form-label col-sm-2 pt-0">Type of shot</legend>
                 <div class="col-sm-10">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="type" id="gridRadios1" value="Penality" checked>
+                    <input class="form-check-input" type="radio" name="type" id="gridRadios1" value="Penalty" checked>
                     <label class="form-check-label" for="gridRadios1">
                       Penalty Stroke
                     </label>
@@ -432,24 +427,31 @@ include "db-api.php";
                       Field Goal
                     </label>
                   </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="type" id="gridRadios3" value="Penalty Stroke">
+                    <label class="form-check-label" for="gridRadios3">
+                      Penalty Stroke
+                    </label>
+                  </div>
 
+                  </div>
                 </div>
-              </div>
-              <br>
+                <br>
             </fieldset>
             <div class="form-group row">
               <div class="col-sm-2">Was the short assisted?</div>
               <div class="col-sm-10">
                 <div class="form-check">
-                  <input name="assisted" class="form-check-input" value="True"  type="checkbox" id="gridCheck1">
+                  <input name="assisted" class="form-check-input" value="True" type="checkbox" id="gridCheck1">
                   <label class="form-check-label" for="gridCheck1">
                     Yes
                   </label>
                 </div>
-              </div><div class="col-sm-2">Was the short saved?</div>
+              </div>
+              <div class="col-sm-2">Was the short saved?</div>
               <div class="col-sm-10">
                 <div class="form-check">
-                  <input name="saved" value="True" class="form-check-input" type="checkbox" id="gridCheck1">
+                  <input name="saved" value="1" class="form-check-input" type="checkbox" id="gridCheck1">
                   <label class="form-check-label" for="gridCheck1">
                     Yes
                   </label>
@@ -458,7 +460,7 @@ include "db-api.php";
               <div class="col-sm-2">Was the short intercepted?</div>
               <div class="col-sm-10">
                 <div class="form-check">
-                  <input name="intercept" value="True" class="form-check-input" type="checkbox" id="gridCheck1">
+                  <input name="intercept" value="1" class="form-check-input" type="checkbox" id="gridCheck1">
                   <label class="form-check-label" for="gridCheck1">
                     Yes
                   </label>
@@ -540,7 +542,7 @@ include "db-api.php";
 
         <div id="Corner" class="w3-container event" style="display:none">
           <form action="./register-hits.php" method="POST">
-          <div class="form-group row">
+            <div class="form-group row">
               <label for="gameID" class="col-sm-2 col-form-label">Choose game ID</label>
               <div class="col-sm-10">
                 <select class="form-control" name="game" id="gameID">
@@ -570,7 +572,7 @@ include "db-api.php";
                 </select>
               </div>
             </div>
-           
+
             <fieldset class="form-group">
               <div class="row">
                 <legend class="col-form-label col-sm-2 pt-0">Type of Corner</legend>

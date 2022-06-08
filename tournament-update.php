@@ -11,19 +11,19 @@
     
 
     if($name == ""){
-        $name = $before["Tournement_Name"]; 
+        $name = $before["Tournament_Name"]; 
     }
     if($season == ""){
-        $season = $before["Tournement_Season"]; 
+        $season = $before["Tournament_Season"]; 
     }
     if($country == ""){
-        $country = $before["Tournement_Location_Country"]; 
+        $country = $before["Tournament_Location_Country"]; 
     }
     if($city == ""){
-        $cityt = $before["Tournement_Location_City"]; 
+        $cityt = $before["Tournament_Location_City"]; 
     }
     if($winner == ""){
-        $winner = $before["Tournement_Winner"]; 
+        $winner = $before["Tournament_Winner"]; 
     }
 
     $db->tournamentUpdate($id,$name, $season, $country, $city, $winner);

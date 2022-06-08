@@ -112,7 +112,8 @@
       }
 
       public function registerGame( $umpire, $tournamentId, $team1, $team2, $dom, $altDom, $duration,$round){
-        $query = "INSERT INTO games (Umpire_licence,tournament_ID,Team_1, Team_2, Date_of_Match, Alt_match_day,Time_duration,Game_round) VALUES ('$umpire', '$tournamentId', '$team1', '$team2', '$dom', '$altDom',$duration, $round)";
+        $id = rand(99,99999);
+        $query = "INSERT INTO games (Games_id,Umpire_licence,tournament_ID,Team_1, Team_2, Date_of_Match, Alt_match_day,Time_duration,Game_round) VALUES ('$id','$umpire', '$tournamentId', '$team1', '$team2', '$dom', '$altDom',$duration, $round)";
 
         if($this->conn->query($query) == true){
           echo '<script>alert("Game added successfully"); window.location.href="./dashboard.php"</script>';
@@ -200,8 +201,8 @@
 
       // adding a register tournament function
       public function registerTournament($name, $season, $country, $city){
-        //$id = rand(100,999999999);
-        $query = "INSERT INTO tournament VALUES ('$name','$season','$country','$city', NULL)";
+        $id = rand(100,999999999);
+        $query = "INSERT INTO tournement (Tournament_ID,Tournament_Name,Tournament_Season,Tournament_Location_Country,Tournament_Location_City,Tournament_Winner) VALUES ('$id','$name','$season','$country','$city', NULL)";
         if($this->conn->query($query) == true){
           echo '<script>alert("Tournament added successfully, just reload to see it"); window.location.href="tourMan.php";</script>';
         }
@@ -211,15 +212,15 @@
       }
 
       public function retriveTournament($id){
-        $query = "SELECT * FROM tournament WHERE tournament_ID='$id'";
+        $query = "SELECT * FROM tournement WHERE Tournament_ID='$id'";
         $result = $this->conn->query($query);
 
         return $result->fetch_assoc();
       }
 
       public function tournamentUpdate($id,$name, $season, $country, $city, $winner){
-        $query = "UPDATE tournament SET tournament_Name = '$name', tournament_Season= '$season', tournament_Location_Country='$country', tournament_Location_City='$city'
-        ,tournament_Winner = '$winner' WHERE tournament_ID = '$id';";
+        $query = "UPDATE tournement SET Tournament_Name = '$name', Tournament_Season= '$season', Tournament_Location_Country='$country', Tournament_Location_City='$city'
+        ,Tournament_Winner = '$winner' WHERE Tournament_ID = '$id';";
 
         if($this->conn->query($query) == true){
           echo "<script>console.log('Tournament data updated successfully'); window.location.href='./tourMan.php'</script>";
@@ -347,7 +348,7 @@
         }
       }
       public function registerShot($gameId, $player, $type, $assist, $saved, $intercept){
-        $query = "INSERT INTO event_shots VALUES ('$gameId','$player', '$type','$assist', '$saved','$intercept')";
+        $query = "INSERT INTO event_shots VALUES ('$gameId','$player', '$type','$assist', $saved,$intercept)";
         if($this->conn->query($query) == true){
           echo "<script>alert('Sub added! '); window.location.href='./recEvents.php'</script>";
         }else {

@@ -8,13 +8,14 @@
         $assist = $_POST["assisted"];
     } else $assist = false;
     if(isset($_POST["saved"])){
-        $saved = $_POST["saved"];
-    } else $saved = false;
+        $saved = 1;
+    } else $saved = 0;
 
     if(isset($_POST["intercept"])){
-        $intercept = $_POST["intercept"];
-    } else $intercept = false;
+        $intercept = 1;
+    } else $intercept = 1;
     
+
     $type = $_POST["type"];
     $t = "Fouls";
 

@@ -92,9 +92,8 @@
       $playerStats = $db->getGames();
 
       while ($row = $playerStats->fetch_assoc()) {
-        $tname = $db->getTournament($row["tournament_id"]);
-        $tname = $tname->fetch_assoc();
-        echo '<tr><td>' . $tname["Tournament_Name"] . '</td>
+        
+        echo '<tr><td>' . $row["tournament_id"] . '</td>
             <td>' . $row["Game_round"] . '</td>
             <td>' . $row["Team_1"] . '</td>
             <td>' . $row["Team_2"] . '</td>

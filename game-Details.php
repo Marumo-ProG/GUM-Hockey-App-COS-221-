@@ -152,8 +152,8 @@
 									$t = $db->getTournaments();
 									$tName = '';
 									for($i = 0; $i < count($t);$i++ ){
-										if($t[$i]["Tournement_ID"] == $row["Tournement_ID"]){
-											$tName = $t[$i]["Tournement_Name"];
+										if($t[$i]["Tournament_ID"] == $row["tournament_id"]){
+											$tName = $t[$i]["Tournament_Name"];
 											break;
 										}
 									}
@@ -198,7 +198,7 @@
 													Umpire: <strong>'.$umpire["Name"].'</strong>
 												</div>
 												<div class="match-details">
-													Location: <i> '.$row["Location_id"].'</i>
+													
 												</div>
 											</div>
 										</div>

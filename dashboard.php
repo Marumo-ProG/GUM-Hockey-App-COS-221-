@@ -180,7 +180,7 @@ include "db-api.php";
                       while ($c < count($t)) {
                         $row = $t[$c];
                         echo '
-                          <option value="' . $row["Tournement_ID"] . '">' . $row["Tournement_Name"] . '</option>
+                          <option value="' . $row["Tournament_ID"] . '">' . $row["Tournament_Name"] . '</option>
                         ';
                         $c++;
                       }
@@ -323,13 +323,13 @@ include "db-api.php";
             <tbody>
               <?php
               $gameStats = $db->getTeamStats();
-              while ($gameStats->fetch_assoc()) {
+              while ($row = $gameStats->fetch_assoc()) {
                 echo '<tr>
-                <td>' . $gameStats["Team_Name"] . '</td>
-                <td>' . $gameStats["Team_rating"] . '</td>
-                <td>' . $gameStats["Games_played"] . '</td>
-                <td>' . $gameStats["Team_wins"] . '</td>
-                <td>' . $gameStats["Team_loses"] . '</td>
+                <td>' . $row["Team_Name"] . '</td>
+                <td>' . $row["Team_rating"] . '</td>
+                <td>' . $row["Games_played"] . '</td>
+                <td>' . $row["Team_wins"] . '</td>
+                <td>' . $row["Team_loses"] . '</td>
                 
               </tr>';
               };

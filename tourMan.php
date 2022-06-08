@@ -244,19 +244,19 @@ include "db-api.php";
           $tournaments = $db->getTournaments();
           for ($i = 0; $i < count($tournaments); $i++) {
             $winner;
-            if ($tournaments[$i]["Tournement_Winner"] == null) {
+            if ($tournaments[$i]["Tournament_Winner"] == null) {
               $winner = "Not Set!";
             } else
-              $winner = $tournaments[$i]["Tournement_Winner"];
+              $winner = $tournaments[$i]["Tournament_Winner"];
             echo '
           <div class="col-sm-6">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">' . $tournaments[$i]["Tournement_Name"] . '</h5>
-                <p class="card-text">Season: ' . $tournaments[$i]["Tournement_Season"] . '</p>
+                <h5 class="card-title">' . $tournaments[$i]["Tournament_Name"] . '</h5>
+                <p class="card-text">Season: ' . $tournaments[$i]["Tournament_Season"] . '</p>
                 <p class="card-text">Winner: ' . $winner . '</p>
-                <p class="card-text">Location: ' . $tournaments[$i]["Tournement_Location_City"] . ', ' . $tournaments[$i]["Tournement_Location_Country"] . '</p>
-                <a href="#" id="' . $tournaments[$i]["Tournement_ID"] . '" class="btn btn-primary update">Update information</a>
+                <p class="card-text">Location: ' . $tournaments[$i]["Tournament_Location_City"] . ', ' . $tournaments[$i]["Tournament_Location_Country"] . '</p>
+                <a href="#" id="' . $tournaments[$i]["Tournament_ID"] . '" class="btn btn-primary update">Update information</a>
               </div>
             </div>
           </div>
