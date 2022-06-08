@@ -102,10 +102,36 @@
           return $result;
         }
       }
+      public function getPlayers(){
+        $query = "SELECT * FROM players";
+        $result = $this->conn->query($query);
+        if($result->num_rows > 0){
+          // send a json object with the data
+          return $result;
+        }
+      }
+
+      public function registerGame( $umpire, $tournamentId, $team1, $team2, $dom, $altDom, $duration,$round){
+        $query = "INSERT INTO games (Umpire_licence,Tournement_ID,Team_1, Team_2, Date_of_Match, Alt_match_day,Time_duration,Game_round) VALUES ('$umpire', '$tournamentId', '$team1', '$team2', '$dom', '$altDom',$duration, $round)";
+
+        if($this->conn->query($query) == true){
+          echo '<script>alert("Game added successfully"); window.location.href="./dashboard.php"</script>';
+        }else{
+          echo $this->conn->error;
+        }
+
+      }
+      public function getUmpires(){
+        $query = "SELECT * FROM umpire ORDER BY Name ASC";
+        $result = $this->conn->query($query);
+        if($result->num_rows >0){
+          return $result;
+        } 
+      }
 
       // this function will be used to register teams
       public function registerTeam($name, $coach_id, $captain, $origin){
-        $query = "INSERT INTO teams VALUES ('$name', '$coach_id', '$captain', '$origin')";
+        $query = "INSERT INTO teams VALUES ('$name', '$coach_id', '$captain', '$origin'); INSERT INTO team_stats (Team_Name) VALUES ($name);";
 
         if($this->conn->query($query) == true){
           echo '<script>console.log("Team added successfully");</script>';
@@ -117,7 +143,8 @@
       // this function will be used to add coach into the db
       public function registerCoach($teamName, $gender, $position, $experience, $sDate, $eDate){
    
-        $query = "INSERT INTO coaches (Gender,Position,Experience,Starting_Date,Ending_Date) VALUES ( '$gender', '$position', STR_TO_DATE('$experience','%Y-%m-%d'), STR_TO_DATE('$sDate','%Y-%m-%d'), STR_TO_DATE('$eDate','%Y-%m-%d'))";
+        $query = "INSERT INTO coaches (Gender,Position,Experience,Starting_Date,Ending_Date) 
+        VALUES ( '$gender', '$position', STR_TO_DATE('$experience','%Y-%m-%d'), STR_TO_DATE('$sDate','%Y-%m-%d'), STR_TO_DATE('$eDate','%Y-%m-%d'))";
         if($this->conn->query($query)== true){
           echo "<script>console.log('Coach successfully added!')</script>";
         }else {
@@ -219,6 +246,13 @@
         }
       }
 
+      public function getAllPlayerStats(){
+        $query = "SELECT * FROM player_stats ORDER BY Player_rating DESC";
+        $result = $this->conn->query($query);
+        
+        return $result;
+      }
+
       public function getGames(){
         $query = "SELECT * FROM games";
         $result = $this->conn->query($query);
@@ -229,6 +263,14 @@
         $query = "SELECT * FROM umpire WHERE Umpire_licence='$license'";
         $result = $this->conn->query($query);
         return $result;
+      }
+      public function registerUmpire($id, $name,$games,$age,$experience){
+        $query = "INSERT INTO umpire VALUES ($id, '$name',$age,$games, $experience)";
+        if($this->conn->query($query) == true){
+          echo "<script>alert('Umpire added'); window.location.href='./dashboard.php'</script>";
+        }
+        else 
+        echo $this->conn->error;
       }
       public function getShorts(){
         $query = "SELECT * FROM event_shots ";
@@ -252,15 +294,51 @@
         return $result;
       }
       public function getGameStats($id){
-        $query = "SELECT * FROM game_stats ";
+        $query = "SELECT * FROM game_stats  WHERE Game_id='$id'";
         $result = $this->conn->query($query);
         return $result;
       }
+      public function getAllGameStats(){
+        $query = "SELECT * FROM game_stats";
+        $result = $this->conn->query($query);
+        return $result;
+      }
+      public function getTeamStats(){
+        $query = "SELECT * FROM team_stats ORDER BY Team_rating DESC";
+        $result = $this->conn->query($query);
+        return $result;
+      }
+      public function getTournament($id){
+        $query = "SELECT * FROM tournement WHERE Tournement_ID = '$id' ";
+        $result = $this->conn->query($query);
+        return $result;
+      }
+
+
       public function getPlayerStats($id){
         $query = "SELECT * FROM player_stats ";
         $result = $this->conn->query($query);
         return $result;
       }
+
+      public function registerEvent($time, $t, $gameId){
+        $query = "INSERT INTO events (Time_of_Event,Event_type,Game_id) VALUES ('$time','$t', '$gameId')";
+        if($this->conn->query($query) == true){
+          echo "<script>alert('event added! ')</script>";
+        }else {
+          echo $this->conn->error;
+        }
+      }
+
+      public function registerFoul($gameId, $player, $card, $type){
+        $query = "INSERT INTO event_fouls VALUES ('$gameId','$player', '$card','$type')";
+        if($this->conn->query($query) == true){
+          echo "<script>alert('foul added! '); window.location.href='./recEvents.php'</script>";
+        }else {
+          echo $this->conn->error;
+        }
+      }
+
 
 
   }

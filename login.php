@@ -35,7 +35,7 @@
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark ">
       <!-- navbar-dark bg-dark -->
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"><img src="imgs/logo.jpeg" alt="" width="30" height="24"
+        <a class="navbar-brand" href="index.php"><img src="imgs/logo.jpeg" alt="" width="30" height="24"
             class="d-inline-block align-text-top">
           GUM Login
         </a></a>
@@ -45,7 +45,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li><a href="overview.html"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a></li>
+            <li><a href="overview.php"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a></li>
           </ul>
         </div>
       </div>
