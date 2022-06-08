@@ -58,14 +58,14 @@
         <br>
         <form id="signup-form" action="validate-signup.php" method="POST">
             <div class="form-group">
-                <label for="exampleInputEmail1">First name</label>
-                <input type="text" name="first_name" class="form-control" id="exampleInputEmail1"
+                <label for="exampleInputFN">First name</label>
+                <input type="text" name="first_name" class="form-control" id="exampleInputFN"
                     aria-describedby="emailHelp" placeholder="Enter first name">
                
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Last name</label>
-                <input type="text" name="last_name" class="form-control" id="exampleInputEmail1"
+                <label for="exampleInputLN">Last name</label>
+                <input type="text" name="last_name" class="form-control" id="exampleInputLN"
                     aria-describedby="emailHelp" placeholder="Enter last name">
                 
             </div>
@@ -91,7 +91,7 @@
         <br>
     </section>
 
-    <script>
+    <!-- <script>
         var form = document.getElementById("signup-form");
         var is_admin = document.getElementById("exampleCheck1");
         form.addEventListener("submit", function(e){
@@ -108,7 +108,9 @@
                 form.submit();
             }
         })
-    </script>
+    </script> -->
+
+<script src="newUser.js" type="text/javascript"></script>
 </body>
 
 </html>
