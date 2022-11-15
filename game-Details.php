@@ -123,8 +123,8 @@
 					</ul>
 
 					<h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
-						<span>Record Games</span>
-						<a class="link-secondary" href="#" aria-label="Add a new report">
+						<span>Record Game Events</span>
+						<a class="link-secondary" href="./recEvents.php" aria-label="Add a new report">
 							<span data-feather="plus-circle" class="align-text-bottom"></span>
 						</a>
 					</h6>
@@ -187,9 +187,9 @@
 													'.$row["Date_of_Match"].'@<strong>17:30</strong>
 												</div>
 												<div class="match-score">
-													<span class="match-score-number match-score-number--leading">3</span>
+													<span class="match-score-number match-score-number--leading">'.rand(0,3).'</span>
 													<span class="match-score-divider">:</span>
-													<span class="match-score-number">1</span>
+													<span class="match-score-number">'.rand(0,4).'</span>
 												</div>
 												<div class="match-time-lapsed">
 													'.$row["Time_duration"].'

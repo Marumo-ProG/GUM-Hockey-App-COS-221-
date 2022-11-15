@@ -42,16 +42,11 @@
 <body>
 
   <br><br><br>
-  <form>
-    <label for="stats">Display statistics for:</label>
-    <select name="stats" id="stats" onchange="ChangeTable()">
-      <option value="Players">Players</option>
-      <option value="Games">Games</option>
-      <option value="Teams">Teams</option>
-    </select>
-  </form>
+  
   <br>
-  <table class="PlayerStats" id="PlayerStats">
+  <hr>
+  <h3>Player Statistics </h3>
+  <table class="PlayerStats" id="PlayerStats" style="visibility: visible; margin-bottom: 5px;">
     <tr>
       <th style="text-align: center">Player</th>
       <th style="text-align: center">Rating</th>
@@ -80,7 +75,9 @@
     ?>
 
   </table>
-  <table class="GameStats" id="GameStats">
+  <hr>
+  <h3>Game Statistics </h3>
+  <table class="GameStats" id="GameStats" style="visibility: visible;margin-bottom: 5px;">
     <tr>
       <th style="text-align: center">Game</th>
       <th style="text-align: center">Winner</th>
@@ -115,13 +112,14 @@
             <td>' . $row["Red_cards"] . '</td>
             <td>' . $row["Yellow_cards"] . '</td>
             <td>' . $row["Green_cards"] . '</td>
-            <td>' . $row["Total_games"] . '</td>
             <td>' . $row["Extra_time"] . '</td>
             </tr>';
     }
     ?>
   </table>
-  <table class="TeamStats" id="TeamStats">
+  <hr>
+  <h3>Team Statistics </h3>
+  <table class="TeamStats" id="TeamStats" style="visibility: visible; margin-bottom: 5px;">
     <tr>
       <th style="text-align: center">Team name</th>
       <th style="text-align: center">Rating</th>
@@ -152,7 +150,6 @@
             <td>' . $row["Shots_on_goal"] . '</td>
             <td>' . $row["Shots_on_target"] . '</td>
             <td>' . $row["Goal_accuracy"] . '</td>
-            <td>' . $row["Yellow_cards"] . '</td>
             <td>' . $row["Team_loses"] . '</td>
             </tr>';
     }

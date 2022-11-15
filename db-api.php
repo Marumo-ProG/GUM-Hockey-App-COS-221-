@@ -265,8 +265,8 @@
         $result = $this->conn->query($query);
         return $result;
       }
-      public function registerUmpire($id, $name,$games,$age,$experience){
-        $query = "INSERT INTO umpire VALUES ($id, '$name',$age,$games, $experience)";
+      public function registerUmpire($id, $name,$surname,$games,$age,$experience){
+        $query = "INSERT INTO umpire VALUES ($id, '$name','$surname',$age,$games, $experience)";
         if($this->conn->query($query) == true){
           echo "<script>alert('Umpire added'); window.location.href='./dashboard.php'</script>";
         }

@@ -134,9 +134,9 @@ include "db-api.php";
 
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
 
-            <a class="link-secondary" href="#" aria-label="Add a new report">
+            <a class="link-secondary" href="./recEvents.php" aria-label="Add a new report">
               <!-- <i class="fa-solid fa-plus"></i> -->
-              <span>Record Games</span>
+              <span>Record Game Events</span>
             </a>
           </h6>
           
@@ -262,6 +262,10 @@ include "db-api.php";
                   <div class="form-group">
                     <label for="exampleInputEmail1">Name</label>
                     <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Surname</label>
+                    <input type="text" name="surname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Number of games already umpired for</label>
